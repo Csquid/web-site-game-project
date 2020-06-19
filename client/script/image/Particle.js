@@ -1,7 +1,10 @@
 class Particle extends Sprite{
-    constructor(x,y,a,ctx,img){
-        super(x,y,a,ctx,img);
+    constructor(x,y,) {
         
-        this.id = "particle";
     }
-}
+
+    draw(){
+        super.draw();
+        this.nextParticle ? this.nextParticle.draw() : null;
+    }
+}	

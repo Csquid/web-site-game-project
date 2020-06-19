@@ -2,9 +2,13 @@ const fs = require('fs');
 
 module.exports = function(router){
     router.get('/',function(req, res) {
+        let filedirText = new String();
+        let files = fs.readdirSync(__dirname + "/../../client/html");
+        files.forEach((file) => filedirText += file + "시소님고인물");
+        
         res.render("../html/main.html", {
-            clickSubject : "그냥 메인임",
-            textEnter : "그냥 메인임"
+            clickSubject : "html 목록 보기",
+            textEnter : filedirText
         });
     });
 
