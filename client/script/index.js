@@ -10,7 +10,7 @@ window.onload = function(){
         duration:500
     })
 
-    let input = document.querySelector("#startBtn");
+    let inputs = document.querySelectorAll(".startBtn");
     let blind = document.querySelector("#blind");
 
     function startFunc() {
@@ -26,8 +26,11 @@ window.onload = function(){
         });
     };
     startFunc().then(function() {
-        blind.style.display = "none";
         input.style.display = "block";
+        
+        inputs.forEach((input) => {
+            input.style.display = "block";
+        });
     });
 
 }
