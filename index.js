@@ -15,7 +15,7 @@ server.setHtmlDirection(__dirname + '/client/html/');
 server.use('/html' , html);
 server.use('/image' , image);
 server.use('/script' , script);
-// server.use(express.static('public'));
+//server.use(express.static('public'));
 server.use('/static', server.getExpress().static('client'));
 
 server.get('/',function(req,res){

@@ -26,7 +26,7 @@ window.onload = function(){
         });
     };
     startFunc().then(function() {
-        input.style.display = "block";
+        blind.style.display = "none";
         
         inputs.forEach((input) => {
             input.style.display = "block";
