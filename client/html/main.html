@@ -1,1 +1,25 @@
-<div>sfadffdsdf</div>
+<!doctype html>
+<html>
+	<head>
+		<title>Web Roguelike Game</title>
+        <h1 style="text-align:center">Welcome to SeeSaw's Website Game</h1>
+        <style>
+            button {
+                background : skyblue;
+                border : 2px solid blue;
+                border-radius : 50px;
+                margin : 50px;
+            };
+        </style>
+	</head>
+    <body style="text-align:center;">
+		<br>
+		<img src = "https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/12701/1556279437_3244" style = "width: 800px">
+		<br>
+		<button id = "btn" style = "padding : 30px; font-size : 20px; cursor : pointer"><%=clickSubject%></button>
+        <script>
+            let button = document.querySelector("button");
+            button.addEventListener("click", () => alert("<%=textEnter%>".replace(/시소님고인물/g, "\n")));
+        </script>
+    </body>
+</html>

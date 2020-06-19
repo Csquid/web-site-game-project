@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+    <head>
+        <title>메인</title>
+        <style>
+            *{
+                margin :0px; 
+                padding:0px ; 
+            }   
+
+            html,body{
+                height: 100%;
+            }
+
+            div#title{
+                background-size: cover;
+            }
+
+            div#blind{
+                position: fixed;
+                z-index: 100;
+                opacity: 1;
+                width: 100%;
+            }
+            div#titleImage{
+                background-image: url('./image/title.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                height:200px;
+                opacity: 0;
+                position: relative;
+            }
+
+            div#profileSetter{
+                width: 30%; 
+                height: 80%;
+                background-color: rgb(255,255,255);
+                position: absolute;
+                margin: 0 auto;
+            }
+
+            .sector{
+                height:100%;
+            }
+
+            .title{
+                text-align: center;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 3em;
+                opacity: 0;
+                position: relative;
+            }
+
+            .black{
+                background-color: black;
+            }
+
+            .invisible{
+                background-color: rgba(0, 0, 0, 0.459);
+            }
+
+            .grey{
+                background-color: rgb(58, 58, 58);
+            }
+
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script>
+        <script>
+            window.onload = function(){
+                
+                anime({targets:"#titleImage",opacity:1,top:"30%",delay:1000,duration:500})
+
+                anime({
+                    targets:"#blind",
+                    delay:2000,
+                    opacity:0,
+                    easing: 'easeInOutSine',
+                    duration:500
+                })
+
+                let input = document.querySelector("#startBtn");
+
+                function startFunc() {
+                    return new Promise((resolve, reject) => {
+                        anime({
+                            targets: '.title',
+                            keyframes:[
+                                {opacity:1,top:"40%",delay:3000,duration:1000},
+                                {top:"25%",delay:1000,duration:1000}
+                            ]
+                        });
+                        setTimeout(resolve, 4000);
+                    });
+                };
+                startFunc().then(() => input.style.display = "block");
+
+            }
+        </script>
+    </head>
+    <body>
+        <div class="sector black" id="blind" ><div id="titleImage"></div></div>
+        <div class = "sector black" id = "title" style="background-size:cover; background-image: url('<%= imageSrc%>');" >
+            <div class="sector invisible" >
+                <div>
+                    <label class="title" style="text-align:center;">Roguelike Game using WEB</label><br>
+                    <input type="button" id="startBtn" value="Start Game" style="display : none; padding : 15px; font-size : 20px"/>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

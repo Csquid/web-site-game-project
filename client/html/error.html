@@ -1,13 +1,15 @@
 <!doctype html>
 <html>
 
-	<head>
-        <title>Error <%= ErrorCode%></title>
-    </head>
+<head>
+	<title>Error <%= errorCode%></title>
+</head>
 
-	<body>
-		<div style = "background-color:powderblue; font-family:verdana; font-size:250%;">Error!</div>
-        <div style = "font-family:courier;"><%= ErrorInform%></div>
-	</body>
+<body>
+	<div style="background-color:powderblue; font-family:verdana; font-size:250%;"><%= subject%></div>
+	<div style="font-family:courier; font-size:3em">
+		<%= errorInformation%>
+	</div>
+</body>
 
 </html>
