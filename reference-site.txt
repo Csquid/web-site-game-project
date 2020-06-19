@@ -1,0 +1,2 @@
+[express static directory]
+https://expressjs.com/ko/starter/static-files.html
