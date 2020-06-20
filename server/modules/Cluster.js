@@ -1,22 +1,23 @@
 class Cluster{
-    constructor(cluster){
+    constructor(cluster) {
         this.cluster =                    cluster || null;
         this.isMaster = cluster ? cluster.isMaster : null;
     }
 
-    getCluster(){
+    getCluster() {
         return this.cluster;
     }
 
-    getIsMaster(){
+    getIsMaster() {
         return this.isMaster;
     }
 
-    setCluster(cluster){
+    setCluster(cluster) {
         this.cluster =                    cluster || null; 
         this.isMaster = cluster ? cluster.isMaster : null;
     }
-    fork(){
+    
+    fork() {
         if(this.getIsMaster()){
             this.getCluster().fork();
         } else {

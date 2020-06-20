@@ -12,9 +12,10 @@ class Server {
         this.app              .use(this.bodyParser.json());
         this.app        .use(this.bodyParser.urlencoded());
         this.app.use(this.session({
-        secret: '@#@$MYSIGN#@$#$', resave: false,     saveUninitialized: true
+            secret: '@#@$MYSIGN#@$#$', resave: false,     saveUninitialized: true
         }));
         this.server = this.http.createServer(this.app);
+        this.banIp = [];
     }
 
     get(dir,func) {
